@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :menu_items
   resources :menu_categories
   resources :users
-  resources :create_users
   get "/" => "home#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
