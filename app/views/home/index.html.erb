@@ -3,28 +3,10 @@
     <p class="Home-title">Foodie's Spot</p>
     <div class="Images-parent">
         <img class="Food-image" src="https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGl6emF8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-        <img class="Food-image" src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2Vyc3xlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-        <img class="Food-image" src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2FuZHdpY2h8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
     </div>
-    <p class="Home-text">New user? <%= link_to "sign up here"%></p>
-    <p class="Home-text">Existing user? <%= link_to "sign in here"%></p>
+    <p class="Home-text">New user? <%= link_to "sign up here", new_user_path%></p>
+    <p class="Home-text">Existing user? <%= link_to "sign in here", new_sessions_path%></p>
 </div>
 
-<script>
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("Food-image");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-</script>
     
-</div>
+

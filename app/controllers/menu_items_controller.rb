@@ -21,16 +21,12 @@ class MenuItemsController < ApplicationController
 
   # POST /menu_items or /menu_items.json
   def create
-    @menu_item = MenuItem.new(menu_item_params)
-
-    respond_to do |format|
-      if @menu_item.save
-        format.html { redirect_to @menu_item, notice: "Menu item was successfully created." }
-        format.json { render :show, status: :created, location: @menu_item }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @menu_item.errors, status: :unprocessable_entity }
-      end
+    def create
+      menu_category_id = params[:menu_category_id]
+      name = params[:name]
+      description = params[:description]
+      price = params[:price]
+      MenuItem.create!(menu_category_id: menu_category_id, name: name, description: description, price: price)
     end
   end
 

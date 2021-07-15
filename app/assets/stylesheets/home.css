@@ -34,3 +34,21 @@
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 20px; 
 }
+
+.Flash-error {
+    text-align: center;
+    font-size: 30px;
+    color: red;
+    margin-top: 10px;
+    margin-top: 10px;
+}
+
+.UserHeader {
+    font-family: 'Lucida Sans Unicode';
+    font-size: 30px;
+    margin-left: 20px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
