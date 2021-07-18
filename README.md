@@ -1,24 +1,7 @@
-# README
+# Cafeteria Management
+Built an Minimum Viable Product(MVP)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Features
+User Can signin and sign out
+User can add to cart , proceed to checkout and place an order
+Owner can add new menu item to menu
