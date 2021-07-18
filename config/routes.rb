@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :cart_items
   get "/" => "home#index"
   #resources :order_items
-  #resources :orders
+  resources :orders
   
   
   get "/signin" => "sessions#new", as: :new_sessions

@@ -1,27 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Carts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @carts.each do |cart| %>
-      <tr>
-        <td><%= cart.user_id %></td>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Cart', new_cart_path %>
+<h2 class="Cart-title">Your Cart</h2>
+<div class="Cart-items">
+  <% @current_user.carts.first.cart_items.each do |item| %>
+    <div class="CartItems-text">
+      <p>Item: <%= item.menu_item_name %></p>
+      <p> Price: <%= item.menu_item_price %>₹</p>
+      <p> Quantity: <%= item.quantity %></p>
+      <p> Total Price: <%= item.total_price %>₹</p>
+    </div>
+  <% end %>
+  
+</div>
+<footer class="Cart-subtotal">
+  <p> Sub Total: <%= @current_user.carts.first.sub_total %>₹ </p>
+  <%= button_to "Proceed to checkout",  "/carts/#{@cart.id}", method: "get" %>
+</footer>
