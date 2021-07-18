@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :ensure_user_logged_in
-  before_action :set_cart
+  before_action :set_cart, optional: true
 
   def ensure_user_logged_in
     unless current_user
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
       nil
     end
   end
-
+  
   def set_cart
     @cart = current_user.carts.find_by(id: session[:cart_id]) || current_user.carts.create
     session[:cart_id] = @cart.id

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :ensure_user_logged_in
+  skip_before_action :set_cart
 
   def new
     render "users/new"
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    new_user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password], role: "customer")
+    new_user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password], role: "owner")
     if new_user.save
       user = User.find_by(email: params[:email])
       session[:current_user_id] = user.id
